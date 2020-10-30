@@ -1,0 +1,19 @@
+.box{
+    width:1000px;
+}
+.left{
+    float:left;
+    width:30%;
+    height:100px;
+}
+.center{
+    float:left;
+    width:30%;
+    height:100px;
+}
+.right{
+    float:left;
+    width:30%;
+    height:100px;
+}
+
