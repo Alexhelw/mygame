@@ -13,51 +13,6 @@
    color:black;
 
 }
-#p1{
-    font-size:20px;
-    color:white;
-}
-#banner{
-   font-family:"微软雅黑";
-   font-size:14px;
-   color:#fff;
-   width:1000px;
-   height:335px;
-   overflow:hidden;
-   margin:auto;
-}
-
-
-#left{
-   width:755px;
-   height:335px;
-   font-weight:bold;
-   background:url("../images/img_left.jpg");
-   position:relative;
-   float:left;
-}
-
-#content_left{
-   position:absolute;
-   top:90px;
-   right:45px;
-   text-align:right;
-}
-
-.name_en{
-   font-size:14px;
-}
-.name_ch{
-   font-size:24px;
-   font-family:"黑体";
-   padding-right:10px;
-
-}
-.motto{
-   margin-top:20px;
-   font-family:"黑体";
-   font-size:16px;
-}
 
 ul.style_a{
    margin-top:25px;
@@ -93,18 +48,6 @@ ul.style_a li.current a:hover{
    position:relative;
 }
 
-#right{
-   width:245px;
-   height:335px;
-   background:#4B4642;
-   float:right;
-   position:relative;
-}
-#content_right{
-   position:absolute;
-   top:50px;
-   left:30px;
-}
 ul.style_icon li a:visited{
    color: blue; 
    text-decoration: none ; 
@@ -125,16 +68,6 @@ ul.style_icon{
 ul.style_icon li{
   list-style:none;
 }
-
-.c1{
-   clear:both;
-   margin-top:30px;
-   margin-right:30px;
-   text-indent:2em;
-   line-height:24px;
-}
-
-
 
 #head{
   
@@ -177,13 +110,6 @@ ul.style_icon li{
    text-decoration:underline; 
 }
 
-#logo{
-   background:url("../images/1.jpg") no-repeat;
-  width:300px;
-  height:150px;
-  float:left;
-}
-
 #underpart
 {
 	width:1000px;
@@ -207,7 +133,7 @@ ul.style_icon li{
 
 #part1{
 	margin-left:20px;
-}
+}                                             
 #part3{
 	width:285px;
 	height:240px;
@@ -232,29 +158,4 @@ ul.style_icon li{
 }
 #part1:hover,#part2:hover,#part3:hover{
     border-color:#ff7202;
-}
-#part1>h4,#part2>h4,#part3>h4{
-  	font-family:"微软雅黑";
-	font-size:16px;
-	color:#CE0000;
-	margin-top:30px;
-}
-
-#part1 li,#part2 li,#part3 li{
-   	font-family:"微软雅黑";
-	font-size:14px;
-	color:#000;	
-}
-
-
-#footer{
-   width:1000px;
-   height:50px;  
-   z-index:100;
-   color:#777;
-   line-height:25px;
-   margin:auto;
-}
-#footer a:link{
-   color:#777;
-}																																												
+}																																									
