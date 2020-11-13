@@ -1,0 +1,39 @@
+﻿*{
+	margin: 0px;
+	padding:0px;
+}
+body{
+	background: #fcfaf5;
+	font-family:"Microsoft YaHei";/*设定所有的字体均为“微软雅黑”*/
+}
+
+#content{
+	width: 1000px;
+	margin:0 auto;/*控制内容区域水平居中*/
+}
+form{
+	border: 1px solid #e0d4af;
+	background-color: #fff;
+	padding: 20px;
+	line-height: 50px;
+	background-image: url(../images/mn.jpg);
+	background-repeat: no-repeat;
+	background-position: bottom right;
+}
+form table{
+	margin:0 auto;
+}
+.col1{
+	width: 100px;
+	font-size: 14px;
+	color: #333;
+}
+.col2{
+	width: 350px;
+}
+.tr{
+	text-align: center;
+}
+.tr input{
+	width: 80px;
+}

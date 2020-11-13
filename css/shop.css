@@ -1,0 +1,41 @@
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: space-evenly;
+  border: 2px dashed #000;
+  width: 1000px;
+  height: 750px;
+  }
+
+.item1 {
+  width: 500px;
+  height: 250px;
+  line-height: 50px;
+  text-align: center;
+  border: 1px solid green;
+  font-size: 22px;
+  background:url("../images/16.jpg");
+}
+.item2 {
+  width: 500px;
+  height: 250px;
+  line-height: 50px;
+  text-align: center;
+  border: 1px solid green;
+  font-size: 22px;
+  background:url("../images/18.png");
+}
+.item3 {
+  width: 500px;
+  height: 250px;
+  line-height: 50px;
+  text-align: center;
+  border: 1px solid green;
+  font-size: 22px;
+  background:url("../images/17.jpg");
+}
+#title{ 
+    align:center;
+    font-size:25px;
+}
