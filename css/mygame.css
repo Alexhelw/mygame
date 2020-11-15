@@ -17,4 +17,15 @@
     width:30%;
     height:100px;
 }
-
+.sprite{
+    display:inline-block;
+    width:125px;
+    height:125px;
+    background-image:url(../images/18.jpg);
+}
+.sprite.man{
+    background-position: 0px -250px;
+}
+.sprite.woman{
+    background-position: -125px -250px;
+}
