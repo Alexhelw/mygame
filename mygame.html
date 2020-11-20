@@ -1,16 +1,70 @@
-<!doctype html>
+﻿<!doctype html>
 <html>
- <head>
-  <meta charset="utf-8">
-  <meta name="Author" content=""/>
-  <meta name="Keywords" content=""/>
-  <meta name="Description" content=""/>
-  <title>我的游戏</title>
-   <link href="css/shangbiao.css" rel="stylesheet" type="text/css"/>
-   <link rel="stylesheet" href="css/mygame.css" />
- </head>
- <body>
-          <div id="head">
+<head>
+<meta charset="utf-8">
+<title>jQuery图片点击放大-jq22.com</title>
+<script src="https://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<link rel="stylesheet" href="css/mygame.css" />
+<style>
+*{
+	padding:0px;
+	margin:0px;
+}
+#front{
+   font-size:30px;
+   width:500px;
+   text-align: center;
+}
+
+#nav{
+   width:850px;
+   height:73px;
+   margin-left:20px;  
+   margin-top:20px;   
+   font-family:"微软雅黑";
+   font-size:16px;
+   background-color:#6495ed;
+}
+#nav ul{
+   list-style:none
+}
+#nav ul li{
+   margin-top:25px;
+   text-align: center;
+   float:left;
+   width:150px;   
+}
+#nav ul li a:link{
+   color:black;
+   font-weight:normal;
+   text-decoration:none; 
+}
+#nav ul li a:visited{
+   color:black;
+   font-weight:bold;
+   text-decoration:none; 
+}
+#nav ul li a:hover{
+   color:green;
+   font-weight:bold;
+   text-decoration:underline; 
+}
+#head{
+  
+   margin-top:15px;
+   width:1000px;
+   height:75px;
+   margin:0px auto;
+}
+body {
+	margin:0 auto;
+}
+
+</style>
+</head>
+<body>
+
+<div id="head">
 	  
           <div id="front">
           <br>
@@ -34,28 +88,103 @@
 	<span class='sprite woman'></span>
    	<br>
       </div>
-<div class = "box">
-   <div class="left">
-	<br>
-	<a href = "content1.html">死亡细胞</a>
-	<br>
-	<img src = "images/6.jpg" width ="200" height = "100" align = "center"/>
- 	<br>
-    </div>
-    <div class="center">
+
+
+    
+       
+            <div class="center">
 	<br>
 	<a href = "content2.html">GTA5</a>
 	<br>
-	<img src = "images/7.jpg" width ="200" height = "100" align = "center"/>
+ 	<class="li_images">
+	<img src = "images/7.jpg" width ="200" height = "100" align = "center" class="item_img"/>
 	<br>
     </div>
-    <div class="right">
+    
+        <class="li_images">
+            <div class="left">
+	<br>
+	<a href = "content1.html">死亡细胞</a>
+	<br>
+	<img src = "images/6.jpg" width ="200" height = "100" align = "center" class="item_img"/>
+ 	<br>
+        </div>
+<class="li_images">
+            <div class="right">
 	<br>
 	<a href = "content3.html">求生之路2</a>
 	<br>
-	<img src = "images/8.jpg" width ="200" height = "100" align = "center"/>
+	<div class="li_images">
+	<img src = "images/8.jpg" width ="200" height = "100" align = "center" class="item_img"/>
+	 </div>
 	<br>
     </div>
-</div>
- </body>
- </html>
+<script>
+$.fn.ImgZoomIn = function() {
+    var window_h = $(window).height();
+    var scroll_h = $(window).scrollTop();
+
+    bgstr = '<div id="ImgZoomInBG" style="position: absolute;filter:Alpha(Opacity=70); opacity:0.7;z-index: 10000;background-color: #000;display: none;"></div>';
+    imgstr = '<img id="ImgZoomInImage" src="' + $(this).attr('src') + '" style="cursor:pointer; display:none; position:absolute; z-index:10001;" />';
+    if ($('#ImgZoomInBG').length < 1) {
+        $('body').append(bgstr);
+    }
+    if ($('#ImgZoomInImage').length < 1) {
+        $('body').append(imgstr);
+    } else {
+        $('#ImgZoomInImage').attr('src', $(this).attr('src'));
+    }
+
+    $('#ImgZoomInBG').css('top', scroll_h + 'px');
+    $('#ImgZoomInBG').css('width', '100%');
+    $('#ImgZoomInBG').css('height', window_h + 'px');
+
+    $('#ImgZoomInImage').css('width', '100%');
+    $('#ImgZoomInImage').css('height', (window_h / 2) + 'px');
+    $('#ImgZoomInImage').css('top', (scroll_h + window_h / 4) + 'px');
+
+    $('#ImgZoomInBG').show();
+    $('#ImgZoomInImage').show();
+};
+// PC端
+$(document).ready(function() {
+    $(document).on('click', '.item_img', function() {
+        $(this).ImgZoomIn();
+        $(document.body).css({
+            "overflow-x": "hidden",
+            "overflow-y": "hidden"
+        });
+    });
+
+    $(document).on('click', '#ImgZoomInImage', function() {
+        $('#ImgZoomInImage').hide();
+        $('#ImgZoomInBG').hide();
+        $(document.body).css({
+            "overflow-x": "auto",
+            "overflow-y": "auto"
+        });
+    });
+});
+// 手机端
+$(document).ready(function() {
+    $(document).on('touchend', '.item_img', function(t) {
+        $(this).ImgZoomIn();
+        document.ontouchstart = function() {
+            return false;
+        }
+        t.preventDefault();
+    });
+
+    $(document).on('touchend', '#ImgZoomInImage', function(t) {
+        $('#ImgZoomInImage').hide();
+        $('#ImgZoomInBG').hide();
+        document.ontouchstart = function() {
+            return true;
+        }
+        t.preventDefault();
+    });
+});
+</script>
+
+</body>
+</html>
