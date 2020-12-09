@@ -1,0 +1,130 @@
+*{
+	padding:0px;
+	margin:0px;
+}
+
+h1{
+	font-size:28px;
+	color:#333;
+	font-family:"Microsoft YaHei";
+	font-weight:normal;
+}
+
+#subhead{
+	color:#444;
+	font-size:small;
+	font-style:italic;
+	font-weight:normal;
+         margin:5px;
+}
+
+.art,#note{
+	width: 600px;
+	text-indent: 2em;
+	color:#333;
+	font-size: 14px;
+}
+
+h3{
+           font-size:1.5em;
+           text-indent:0em;
+}
+#e-header{
+           font-size:0.8em;
+           color:maroon;
+           font-variant:small-caps;
+           }
+
+
+#news,#aside{
+	float:left;
+}
+#news{
+	border:1px solid #e0d4af;
+	width:602px;
+	padding:25px 30px;
+	background:white;
+}
+
+#aside{
+	margin-left: 10px;
+	height: auto;
+}
+.list{
+	border: 1px solid #e0d4af;	
+	padding:24px 30px;
+	width: 264px;
+	margin-bottom: 20px;
+	background-color: #fff;
+}
+.list h1{
+	float: left;
+	line-height: 26px;
+	font-size: 20px;
+	color:#6d6d6d;
+	font-weight: normal;
+	margin-right: 8px;
+}
+.list h2{
+	line-height: 18px;
+	font-size: 18px;
+	color:#bcbcbc;
+	margin-top: 7px;	
+	margin-bottom: 15px;
+	clear: both;
+}
+.list h3{
+	font-size: 16px;
+	color: #d40b07;
+}
+.list img{
+	float: left;
+	margin-right: 7px;
+}
+
+.list p{
+	font-size: 14px;
+	color: #666;
+}
+.list ul{
+	margin-top: 20px;
+	clear: both;
+}
+.list li{
+	color:#444;
+	font-size: 14px;
+	margin-bottom: 5px;
+}
+
+.clear
+{
+    clear:both;
+}
+#nav li
+{
+	width:150px;
+	height:45px;
+	text-align:center;
+	float:left;
+	line-height:45px;
+	list-style-type:none;
+}
+#nav li a:link,#nav li a:visited{
+	color:#fff;
+	text-decoration:none;
+}
+#nav li a:hover{
+	text-decoration:underline;
+}
+
+#pos img{
+	float: left;/*使文字和图片出现在一行*/
+}
+
+#content{	
+	width: 1000px;
+	background-color:#fff;
+	padding:5px;
+	margin:10px  auto; 
+    	border: 1px solid rgb(197,207,245);  
+}

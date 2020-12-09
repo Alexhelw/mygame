@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="zh">
+ <head>
+  <meta charset="utf-8">
+  <meta name="Author" content=""/>
+  <meta name="Keywords" content=""/>
+  <meta name="Description" content=""/>
+  <title>游戏知识问答</title>
+  <link rel="stylesheet" href="css/know.css" />
+ </head>
+ <body>
+    <form name = "c">
+        <span class = bt>选择题(每小题10分，共100分, 总时间10分钟)</span>
+        <p>1、崔佛把飞车党的巢穴炸了之后，来到洛圣都找麦可，先是住在谁家里？<br>
+        A.富兰克林        B.弗洛依德          C.麦可           D.莱斯特<br>
+        答案:A<input type="radio" name = "dx12" value="A">
+        B<input type="radio" name = "dx12" value="B">
+        C<input type="radio" name = "dx12" value="C">
+        D<input type="radio" name = "dx12" value="D">
+        <p>2、崔佛装扮成码头工人来到码头踩点，是要寻找什么？<br>
+        A.战斗机          B.坦克            C.潜水艇          D.汽车<br>
+        答案:A<input type="radio" name = "dx13" value="A">
+        B<input type="radio" name = "dx13" value="B">
+        C<input type="radio" name = "dx13" value="C">
+        D<input type="radio" name = "dx13" value="D">
+        <p>3、老麦第一次和莱斯特见面之后，莱斯特让老麦帮他一个什么忙？<br>
+        A：偷车   B: 暗杀   C：帮他放炸弹   D: 袭警<br>
+        答案:A<input type="radio" name = "dx14" value="A">
+        B<input type="radio" name = "dx14" value="B">
+        C<input type="radio" name = "dx14" value="C">
+        D<input type="radio" name = "dx14" value="D">
+        <p>4、阿曼达背叛老麦，和网球教练偷情，被老麦发现之后，老麦和小富做了什么事情？<br>
+        A:把他暴打了一顿    B:把他给毙了     C：勒索了他一笔巨款    D:和小富一起把他藏身的房子给拆了<br>
+        答案:A<input type="radio" name = "dx15" value="A">
+        B<input type="radio" name = "dx15" value="B">
+        C<input type="radio" name = "dx15" value="C">
+        D<input type="radio" name = "dx15" value="D">
+        <p>5、GTA5OL中，浣熊面具的价格是多少？<br>
+        A 10000   B 15000   C 20000    D 25000<br>
+        答案:A<input type="radio" name = "dx16" value="A">
+        B<input type="radio" name = "dx16" value="B">
+        C<input type="radio" name = "dx16" value="C">
+        D<input type="radio" name = "dx16" value="D">
+        <p>6、GTA5OL中，皇家楼19号公寓能容纳几辆车？<br>
+            A 2    B 4    C 6    D 10<br>
+            答案:A<input type="radio" name = "dx17" value="A">
+            B<input type="radio" name = "dx17" value="B">
+            C<input type="radio" name = "dx17" value="C">
+            D<input type="radio" name = "dx17" value="D">
+        <p>7、GTA5OL中，成就 一帆风顺的达成条件是什么 ？<br>>
+            A 完成太平洋标准差事    B 完成水上竞速任务    C在海上逃脱警察追击    D跳伞安全着陆<br>
+            答案:A<input type="radio" name = "dx18" value="A">
+            B<input type="radio" name = "dx18" value="B">
+            C<input type="radio" name = "dx18" value="C">
+            D<input type="radio" name = "dx18" value="D">
+        <p>8、游戏开始序章的时候抢劫银行的一共有几个人？<br>
+            A.3人   B.4人    C.5人    D.6人<br>
+            答案:A<input type="radio" name = "dx19" value="A">
+            B<input type="radio" name = "dx19" value="B">
+            C<input type="radio" name = "dx19" value="C">
+            D<input type="radio" name = "dx19" value="D">
+        <p>9、单人模式中，街头竞速的开放时间是几点到几点？<br>
+            A.20：00~02：00                B.21：00~03：00             C.22：00~04：00                 D.23：00~05：00<br>
+            答案:A<input type="radio" name = "dx20" value="A">
+            B<input type="radio" name = "dx20" value="B">
+            C<input type="radio" name = "dx20" value="C">
+            D<input type="radio" name = "dx20" value="D">
+        <p>10、PC版用键盘操作时，切换第一和第三人称默认是按什么键？<br>
+            A.C                B.V                 C.M                D.H<br>
+            答案:A<input type="radio" name = "dx21" value="A">
+            B<input type="radio" name = "dx21" value="B">
+            C<input type="radio" name = "dx21" value="C">
+            D<input type="radio" name = "dx21" value="D">
+        <p><input type = "button" value = "提交答案" onclick = "tjda()">
+        <p id="an"></p>
+</form>
+<script>
+    function tjda(){
+        var sum = 0;
+        var t2 = "";
+        var p2 = "B,C,C,D,D,C,A,A,C,B";
+        for(var i = 0;i<10;i++){
+            var flag = 0;
+            for(var j = 0;j<4;j++){
+                if(c.elements[4*i+j].checked){
+                    flag = 1;
+                    v = c.elements[4*i+j].value;
+                    break;
+                }
+            }
+            if(!flag)v="0";
+            if(i==0)
+                t2=t2+v;
+            else
+                t2 = t2+","+v;
+        }
+        for(i=0;i<10;i++){
+            a = p2.substring(i*2,i*2+1);
+            b = t2.substring(i*2,i*2+1);
+            if(a==b)sum=sum+10;
+        }
+        document.getElementById("an").innerText="你的成绩为 "+sum+" 分";
+    }
+</script>
+ </body>
+ </html>

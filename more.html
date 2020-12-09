@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="css/more.css" />
+    <meta charset="UTF-8">
+    <title>查看更多</title>
+    <style>
+       
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li>荒野大镖客2(已购买) </li>
+        <li>最后生还者2(已购买) </li>
+        <li>神秘海域4(已购买) </li>
+        <li>绝地求生 <span class="update">修改</span><span class="delete">删除</span></li>
+        <li>无主之地3 <span class="update">修改</span><span class="delete">删除</span></li>
+    </ul>
+    <div class="addBtn" id="addBtn">添加</div>
+</div>
+<script>
+    var addBtn = document.getElementById('addBtn');
+    var oUl = document.getElementsByTagName('ul')[0];
+    var upds = document.getElementsByClassName('update');
+    var dels = document.getElementsByClassName('delete');
+    addBtn.onclick = function () {
+        var res = prompt('请输入要添加的游戏');
+        if(res){
+            var oLi = document.createElement('li');
+            oLi.innerHTML = res+'<span class="update">修改</span><span class="delete">删除</span>';
+            oUl.appendChild(oLi);
+        }
+    };
+    oUl.onclick = function (event) {
+        event = event || window.event;
+        var tar = event.target||event.srcElement; 
+        console.log(tar);
+        if(tar.innerHTML === '修改'){
+            var res = prompt('请输入修改后游戏');
+            if(res){
+                var oLi = document.createElement('li');
+                oLi.innerHTML = res+'<span class="update">修改</span><span class="delete">删除</span>';
+                oUl.replaceChild(oLi,tar.parentNode);
+            }
+        }
+        if(tar.innerHTML === '删除'){
+            if(confirm('确定要删除该项吗？')){
+                oUl.removeChild(tar.parentNode);
+            }
+        }
+    }
+</script>
+</body>
+</html>
