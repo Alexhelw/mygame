@@ -7,10 +7,34 @@
   <meta name="Description" content=""/>
   <title>游戏知识问答</title>
   <link rel="stylesheet" href="css/know.css" />
+  <script>
+    var seconds = 100;
+    var handle;
+    setTimeout("startTimer()",1000);
+    function startTimer(){
+        handle = setInterval("timer()", 1000);
+    }
+    function timer(){
+        seconds-=1;
+        document.all.redhacker.innerHTML="问答时间还剩下<font color ='red'>"+seconds+"</font>秒";
+        if(seconds==0){
+            stopTimer();
+        }
+    }
+    function stopTimer(){
+       clearInterval(handle);
+       document.all.redhacker.innerHTML="问答已结束";
+       tjda();
+    }
+</script>
  </head>
  <body>
     <form name = "c">
-        <span class = bt>选择题(每小题10分，共100分, 总时间10分钟)</span>
+        <span class = bt>选择题(每小题10分，共100分, 总时间100秒)
+            <div id = "count">
+                <div id = "redhacker"></div>
+            </div>
+        </span>
         <p>1、崔佛把飞车党的巢穴炸了之后，来到洛圣都找麦可，先是住在谁家里？<br>
         A.富兰克林        B.弗洛依德          C.麦可           D.莱斯特<br>
         答案:A<input type="radio" name = "dx12" value="A">
@@ -100,6 +124,7 @@
             if(a==b)sum=sum+10;
         }
         document.getElementById("an").innerText="你的成绩为 "+sum+" 分";
+        stopTimer();
     }
 </script>
  </body>
