@@ -1,6 +1,6 @@
 function setCookie(cname,cvalue,exdays){
         var d = new Date();
-        d.setTime(d.getTime()+(exdays*60*1000));
+        d.setTime(d.getTime()+(exdays*1000));
         var expires = "expires="+d.toGMTString();
         document.cookie = cname+"="+cvalue+"; "+expires;
     }
@@ -21,7 +21,7 @@ function setCookie(cname,cvalue,exdays){
         else {
             user = prompt("请输入你的名字:","");
               if (user!="" && user!=null){
-                setCookie("username",user,30);
+                setCookie("username",user,60);
             }
         }
     }
