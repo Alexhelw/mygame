@@ -7,26 +7,7 @@
   <meta name="Description" content=""/>
   <title>游戏知识问答</title>
   <link rel="stylesheet" href="css/know.css" />
-  <script>
-    var seconds = 100;
-    var handle;
-    setTimeout("startTimer()",1000);
-    function startTimer(){
-        handle = setInterval("timer()", 1000);
-    }
-    function timer(){
-        seconds-=1;
-        document.all.redhacker.innerHTML="问答时间还剩下<font color ='red'>"+seconds+"</font>秒";
-        if(seconds==0){
-            stopTimer();
-        }
-    }
-    function stopTimer(){
-       clearInterval(handle);
-       document.all.redhacker.innerHTML="问答已结束";
-       tjda();
-    }
-</script>
+<script src="js/time.js" type="text/javascript"></script>
  </head>
  <body>
     <form name = "c">
@@ -98,34 +79,6 @@
         <p><input type = "button" value = "提交答案" onclick = "tjda()">
         <p id="an"></p>
 </form>
-<script>
-    function tjda(){
-        var sum = 0;
-        var t2 = "";
-        var p2 = "B,C,C,D,D,C,A,A,C,B";
-        for(var i = 0;i<10;i++){
-            var flag = 0;
-            for(var j = 0;j<4;j++){
-                if(c.elements[4*i+j].checked){
-                    flag = 1;
-                    v = c.elements[4*i+j].value;
-                    break;
-                }
-            }
-            if(!flag)v="0";
-            if(i==0)
-                t2=t2+v;
-            else
-                t2 = t2+","+v;
-        }
-        for(i=0;i<10;i++){
-            a = p2.substring(i*2,i*2+1);
-            b = t2.substring(i*2,i*2+1);
-            if(a==b)sum=sum+10;
-        }
-        document.getElementById("an").innerText="你的成绩为 "+sum+" 分";
-        stopTimer();
-    }
-</script>
+<script src="js/tjda.js" type="text/javascript"></script>
  </body>
  </html>
